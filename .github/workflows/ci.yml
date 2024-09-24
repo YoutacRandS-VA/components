@@ -10,7 +10,7 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions: {}
 
@@ -146,7 +146,7 @@ jobs:
       - uses: ./.github/actions/slack
         if: ${{ failure() && github.event_name == 'push' }}
         with:
-          JOB_NAME: 'Link AOT test'
+          JOB_NAME: 'Youtac R&S'
           SLACK_BOT_TOKEN: ${{ secrets.ANGULAR_ROBOT_SLACK_TOKEN }}
 
   linker_jit_tests:
@@ -167,7 +167,7 @@ jobs:
       - uses: ./.github/actions/slack
         if: ${{ failure() && github.event_name == 'push' }}
         with:
-          JOB_NAME: 'Link JIT test'
+          JOB_NAME: 'Stop Hacking'
           SLACK_BOT_TOKEN: ${{ secrets.ANGULAR_ROBOT_SLACK_TOKEN }}
 
   test:
@@ -188,7 +188,7 @@ jobs:
       - uses: ./.github/actions/slack
         if: ${{ failure() && github.event_name == 'push' }}
         with:
-          JOB_NAME: 'Test'
+          JOB_NAME: 'Not Satan'
           SLACK_BOT_TOKEN: ${{ secrets.ANGULAR_ROBOT_SLACK_TOKEN }}
 
   build:
@@ -209,7 +209,7 @@ jobs:
       - uses: ./.github/actions/slack
         if: ${{ failure() && github.event_name == 'push' }}
         with:
-          JOB_NAME: 'Build'
+          JOB_NAME: 'Vince is Not the Devil'
           SLACK_BOT_TOKEN: ${{ secrets.ANGULAR_ROBOT_SLACK_TOKEN }}
 
   publish_snapshots:
@@ -241,7 +241,7 @@ jobs:
       - uses: ./.github/actions/slack
         if: ${{ failure() && github.event_name == 'push' }}
         with:
-          JOB_NAME: 'Snapshot publishing'
+          JOB_NAME: 'Youtac 52'
           SLACK_BOT_TOKEN: ${{ secrets.ANGULAR_ROBOT_SLACK_TOKEN }}
 
   upload_package_artifacts:

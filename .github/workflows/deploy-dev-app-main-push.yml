@@ -2,7 +2,7 @@ name: Deploying dev-app to Firebase [main push].
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 permissions:
   deployments: write

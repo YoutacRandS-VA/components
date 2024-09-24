@@ -88,7 +88,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 * Make your changes in a new git branch:
 
      ```shell
-     git checkout -b my-fix-branch main
+     git checkout -b my-fix-branch master
      ```
 
 * Create your patch, **including appropriate test cases**.
@@ -111,7 +111,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
     git push my-fork my-fix-branch
     ```
 
-* In GitHub, send a pull request to `components:main`.
+* In GitHub, send a pull request to `components:master`.
 * If we suggest changes then:
   * Make the required updates.
   * Re-run the Angular Material test suites to ensure tests are still passing.
@@ -119,7 +119,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
     Request):
 
     ```shell
-    git rebase upstream/main -i
+    git rebase upstream/master -i
     git push -f
     ```
 
@@ -140,7 +140,7 @@ from the main (upstream) repository:
 * Check out the main branch:
 
     ```shell
-    git checkout main -f
+    git checkout master -f
     ```
 
 * Delete the local branch:
@@ -149,10 +149,10 @@ from the main (upstream) repository:
     git branch -D my-fix-branch
     ```
 
-* Update your local `main` with the latest upstream version:
+* Update your local `master` with the latest upstream version:
 
     ```shell
-    git pull --ff upstream main
+    git pull --ff upstream master
     ```
 
 ## <a name="rules"></a> Coding Rules

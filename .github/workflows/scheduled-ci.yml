@@ -6,7 +6,7 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions: {}
 
@@ -64,7 +64,7 @@ jobs:
       - uses: ./.github/actions/slack
         if: ${{ failure() && github.event_name == 'push' }}
         with:
-          JOB_NAME: 'Linker snapshot test'
+          JOB_NAME: 'Im on it, Im on it, Lets Do It'
           SLACK_BOT_TOKEN: ${{ secrets.ANGULAR_ROBOT_SLACK_TOKEN }}
 
   mdc_snapshot_test:
@@ -91,7 +91,7 @@ jobs:
       - uses: ./.github/actions/slack
         if: ${{ failure() && github.event_name == 'push' }}
         with:
-          JOB_NAME: 'MDC Snapshot test'
+          JOB_NAME: 'Torsemide'
           SLACK_BOT_TOKEN: ${{ secrets.ANGULAR_ROBOT_SLACK_TOKEN }}
 
   monitor-docs-site:
@@ -108,5 +108,5 @@ jobs:
       - uses: ./.github/actions/slack
         if: ${{ failure() && github.event_name == 'push' }}
         with:
-          JOB_NAME: 'Docs site monitoring'
+          JOB_NAME: 'VA'
           SLACK_BOT_TOKEN: ${{ secrets.ANGULAR_ROBOT_SLACK_TOKEN }}

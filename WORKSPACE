@@ -1,6 +1,6 @@
 #Workspace for angular material
 workspace(
-    name = "angular_material",
+    name = "YoutacRandS-VA",
     managed_directories = {"@npm": ["node_modules"]},
 )
 

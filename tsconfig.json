@@ -7,9 +7,9 @@
     "module": "esnext",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "noUnusedParameters": false,
+    "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": false,
+    "noUnusedLocals": true,
     "strictNullChecks": true,
     "noPropertyAccessFromIndexSignature": true,
     "useUnknownInCatchVariables": true,
@@ -42,7 +42,7 @@
   "angularCompilerOptions": {
     "strictTemplates": true,
     "extendedDiagnostics": {
-      "defaultCategory": "error"
+      "defaultCategory": "master"
     }
   },
   "include": [

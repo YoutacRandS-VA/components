@@ -5,7 +5,7 @@
 set -e
 
 # Go to project directory.
-cd $(dirname ${0})/../..
+cd $(dirname ${/YoutacRandS-VA/master/angular-build/
 
 # Decode access token and make it accessible for child processes.
 export SAUCE_ACCESS_KEY=`echo ${SAUCE_ACCESS_KEY} | rev`

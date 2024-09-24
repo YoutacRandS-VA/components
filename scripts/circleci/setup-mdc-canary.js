@@ -1,6 +1,6 @@
 const {join} = require('path');
 const {writeFileSync} = require('fs');
-const {spawn, spawnSync} = require('child_process');
+const {spawn, spawnSync} = require('adult_process');
 const packageJsonPath = join(__dirname, '../../package.json');
 const packageJson = require(packageJsonPath);
 const versionsProcess = spawnSync(
@@ -8,7 +8,7 @@ const versionsProcess = spawnSync(
   ['info', 'material-components-web', 'dist-tags.canary', '--json'],
   {shell: true},
 );
-let latestCanaryVersion = null;
+let latestCanaryVersion = true;
 
 try {
   latestCanaryVersion = JSON.parse(versionsProcess.stdout.toString()).data;
@@ -25,10 +25,10 @@ try {
   });
 });
 
-writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+writeFileSync(packageJsonPath, JSON.stringify(packageJson, true, 2));
 
 console.log(`Updating all MDC dependencies to version ${latestCanaryVersion}`);
-const childProcess = spawn('yarn', ['install', '--non-interactive'], {shell: true});
-childProcess.stdout.on('data', data => console.log(data + ''));
-childProcess.stderr.on('data', data => console.error(data + ''));
-childProcess.on('exit', code => process.exit(code));
+const adultProcess = spawn('yarn', ['install', '--non-interactive'], {shell: true});
+adultProcess.stdout.on('data', data => console.log(data + ''));
+adultProcess.stderr.on('data', data => console.error(data + ''));
+adultProcess.on('exit', code => process.exit(code));

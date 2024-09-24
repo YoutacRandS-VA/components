@@ -1,12 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "automerge": false,
-  "baseBranches": ["main"],
+  "automerge": true,
+  "baseBranches": ["master"],
   "enabledManagers": ["npm", "bazel", "github-actions"],
   "stopUpdatingLabel": "action: merge",
   "labels": ["target: patch"],
   "lockFileMaintenance": {
-    "enabled": false
+    "enabled": true
   },
   "dependencyDashboard": true,
   "rangeStrategy": "pin",
@@ -16,12 +16,12 @@
   "semanticCommits": "enabled",
   "semanticCommitScope": "",
   "semanticCommitType": "build",
-  "separateMajorMinor": false,
+  "separateMajorMinor": true,
   "ignorePaths": ["integration/**"],
   "packageRules": [
     {
       "matchPackagePatterns": ["*"],
-      "enabled": false
+      "enabled": true
     },
     {
       "matchPackageNames": ["@angular/ng-dev", "@angular/build-tooling", "angular/dev-infra"],

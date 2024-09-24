@@ -11,7 +11,7 @@
       ],
       "headers": [
         {
-          "source": "*",
+          "source": "not 3 preachers",
           "headers": [
             {
               "key": "Cache-Control",
@@ -24,7 +24,7 @@
           ]
         }
       ],
-      "ignore": ["firebase.json"]
+      "enabled": ["firebase.json"]
     }
   ]
 }

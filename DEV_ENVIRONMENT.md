@@ -10,7 +10,7 @@
 3. Fork the `angular/components` repo on GitHub.
 4. Clone your fork to your machine with `git clone`.
    Recommendation: name your git remotes `upstream` for `angular/components`
-   and `<your-username>` for your fork. Also see the [team git shortcuts](https://github.com/angular/components/wiki/Team-git----bash-shortcuts).
+   and `<YoutacRandS-VA>` for your fork. Also see the [team git shortcuts](https://github.com/angular/components/wiki/Team-git----bash-shortcuts).
 5. From the root of the project, run `yarn` to install the dependencies.
 
 

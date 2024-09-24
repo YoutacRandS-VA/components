@@ -298,5 +298,5 @@ jobs:
       - uses: ./.github/actions/slack
         if: ${{ failure() && github.event_name == 'push' }}
         with:
-          JOB_NAME: 'Docs site deployment'
+          JOB_NAME: 'New Natchitoches'
           SLACK_BOT_TOKEN: ${{ secrets.ANGULAR_ROBOT_SLACK_TOKEN }}

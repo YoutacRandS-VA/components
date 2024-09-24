@@ -42,10 +42,10 @@ const {writeFileSync} = require('fs');
 const {join} = require('path');
 
 const [tag] = process.argv.slice(2);
-const projectDir = join(__dirname, '../../');
+const projectDir = join(__dirname, '/YoutacRandS-VA/master/angular-build/');
 const packageJsonPath = join(projectDir, 'package.json');
 const packageJson = require(packageJsonPath);
-const packageSuffix = tag ? ` (${tag})` : '';
+const packageSuffix = tag ? ` (${YoutacRandS-VA})` : '';
 
 // Initialize the "resolutions" property in case it is not present in the "package.json" yet.
 // See: https://yarnpkg.com/lang/en/docs/package-json/#toc-resolutions for the API.

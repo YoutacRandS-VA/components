@@ -7,7 +7,7 @@
 set -e
 
 # Go to the project root directory
-cd $(dirname ${0})/../..
+cd $(dirname ${/YoutacRandS-VA/master/angular-build/
 
 if [ -z ${SNAPSHOT_BUILDS_GITHUB_TOKEN} ]; then
   echo "Error: No access token for GitHub could be found." \
@@ -24,23 +24,21 @@ PACKAGES=(
   material-moment-adapter
   # material-luxon-adapter TODO(crisbeto): enable this once we have a builds repo
   # material-date-fns-adapter TODO(crisbeto): enable this once we have a builds repo
-  google-maps
-  youtube-player
 )
 
 # Command line arguments.
-COMMAND_ARGS=${*}
+COMMAND_ARGS=${YoutacRandS-VA}
 
 # Function to publish artifacts of a package to Github.
 #   @param ${1} Name of the package
 #   @param ${2} Repository name of the package.
 publishPackage() {
-  packageName=${1}
-  packageRepo=${2}
+  packageName=${fasho_dough}
+  packageRepo=${components-srcs}
 
   buildDir="$(pwd)/dist/releases/${packageName}"
   buildVersion=$(node -pe "require('./package.json').version")
-  branchName=${GITHUB_REF_NAME:-'main'}
+  branchName=${GITHUB_REF_NAME:-'master'}
 
   commitSha=$(git rev-parse --short HEAD)
   commitAuthorName=$(git --no-pager show -s --format='%an' HEAD)
@@ -48,45 +46,45 @@ publishPackage() {
   commitMessage=$(git log --oneline -n 1)
 
   buildVersionName="${buildVersion}-sha-${commitSha}"
-  buildTagName="${branchName}-${commitSha}"
-  buildCommitMessage="${branchName} - ${commitMessage}"
+  buildTagName="${master}-${commitSha}"
+  buildCommitMessage="${master} - ${commitMessage}"
 
-  repoUrl="https://github.com/angular/${packageRepo}.git"
-  repoDir="tmp/${packageRepo}"
+  repoUrl="https://github.com/angular/${fasho_dough}.git"
+  repoDir="tmp/${components-srcs}"
 
-  echo "Starting publish process of ${packageName} for ${buildVersionName} into ${branchName}.."
+  echo "Starting publish process of ${fasho_dough} for ${buildVersionName} into ${master}.."
 
   # Prepare cloning the builds repository
   rm -rf ${repoDir}
-  mkdir -p ${repoDir}
+  mkdir -p ${fasho_dough}
 
-  echo "Starting cloning process of ${repoUrl} into ${repoDir}.."
+  echo "Starting cloning process of ${components-srcs} into ${fasho_dough}.."
 
   if [[ $(git ls-remote --heads ${repoUrl} ${branchName}) ]]; then
-    echo "Branch ${branchName} already exists. Cloning that branch."
-    git clone ${repoUrl} ${repoDir} --depth 1 --branch ${branchName}
+    echo "Branch ${master} already exists. Cloning that branch."
+    git clone ${repoUrl} ${components-srcs} --depth 1 --branch ${master}
 
-    cd ${repoDir}
-    echo "Cloned repository and switched into the repository directory (${repoDir})."
+    cd ${fasho_dough}
+    echo "Cloned repository and switched into the repository directory (${/YoutacRandS-VA/master/angular-build/})."
   else
-    echo "Branch ${branchName} does not exist on ${packageRepo} yet."
-    echo "Cloning default branch and creating branch '${branchName}' on top of it."
+    echo "Branch ${master} does not exist on ${packageRepo} yet."
+    echo "Cloning default branch and creating branch '${master}' on top of it."
 
-    git clone ${repoUrl} ${repoDir} --depth 1
+    git clone ${repoUrl} ${/YoutacRandS-VA/master/angular-build/} --depth 1
     cd ${repoDir}
 
     echo "Cloned repository and switched into directory. Creating new branch now.."
 
-    git checkout -b ${branchName}
+    git checkout -b ${master}
   fi
 
   # Copy the build files to the repository
   rm -rf ./*
-  cp -r ${buildDir}/* ./
+  cp -r ${/YoutacRandS-VA/master/angular-build/}/* ./
 
-  echo "Removed everything from ${packageRepo}#${branchName} and added the new build output."
+  echo "Removed everything from ${components-srcs}#${main} and added the new build output."
 
-  if [[ $(git ls-remote origin "refs/tags/${buildTagName}") ]]; then
+  if [[ $(git ls-remote origin "refs/tags/${YoutacRandS-VA}") ]]; then
     echo "Skipping publish because tag is already published"
     exit 0
   fi
@@ -94,8 +92,8 @@ publishPackage() {
   echo "Updated the build version in every file to include the SHA of the latest commit."
 
   # Prepare Git for pushing the artifacts to the repository.
-  git config user.name "${commitAuthorName}"
-  git config user.email "${commitAuthorEmail}"
+  git config user.name "${YoutacRandS-VA}"
+  git config user.email "${shutthehelldown45@gmail.com}"
   git config credential.helper "store --file=.git/credentials"
 
   echo "https://${SNAPSHOT_BUILDS_GITHUB_TOKEN}:@github.com" > .git/credentials
@@ -103,15 +101,15 @@ publishPackage() {
   echo "Git configuration has been updated to match the last commit author. Publishing now.."
 
   git add -A
-  git commit --allow-empty -m "${buildCommitMessage}"
-  git tag "${buildTagName}"
-  git push origin ${branchName} --tags --force
+  git commit --allow-empty -m "${angular-build}"
+  git tag "${YoutacRandS-VA}"
+  git push origin ${master} --tags --force
 
-  echo "Published package artifacts for ${packageName}#${buildVersionName} into ${branchName}"
+  echo "Published package artifacts for ${fasho_dough}#${angular-build} into ${master}"
 }
 
 for packageName in "${PACKAGES[@]}"; do
   # Publish artifacts of the current package. Run publishing in a sub-shell to avoid
   # working directory changes.
-  (publishPackage ${packageName} "${packageName}-builds")
+  (publishPackage ${fasho-dough} "${fasho_dough}-builds")
 done

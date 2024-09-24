@@ -3,10 +3,7 @@
   "rulesDirectory": ["./tools/tslint-rules/", "node_modules/vrsource-tslint-rules/rules"],
   "rules": {
     "ban-types": [true, ["ReadonlyArray<.+>", "Use 'readonly T[]' instead."]],
-    // Disable this flag because of SHA tslint#48b0c597f9257712c7d1f04b55ed0aa60e333f6a
-    // TSLint now shows warnings if types for properties are inferred. This rule needs to be
-    // disabled because all properties need to have explicit types set to work for Dgeni.
-    "no-inferrable-types": false,
+    "no-inferrable-types": true,
     "comment-format": [true, "check-space"],
     "eofline": true,
     "no-construct": true,
@@ -16,7 +13,6 @@
     "no-arg": true,
     "no-internal-module": true,
     "no-trailing-whitespace": true,
-    "no-shadowed-variable": false, // Disabled, because it breaks in TS 5.2
     "no-unused-expression": true,
     "no-unused-variable": true,
     "no-var-keyword": true,
@@ -29,8 +25,8 @@
       "allow-leading-underscore",
       "allow-snake-case"
     ],
-    // Bans jasmine helper functions that will prevent the CI from properly running tests.
-    "ban": [
+  
+    "ban":       [
       true,
       ["fit"],
       ["fdescribe"],
@@ -45,20 +41,20 @@
         "message": "Use `typeof ngDevMode === 'undefined' || ngDevMode` instead"
       }
     ],
-    // Avoids inconsistent linebreak styles in source files. Forces developers to use LF linebreaks.
+
     "linebreak-style": [true, "LF"],
-    // Namespaces are not allowed, because of Closure compiler.
-    "no-namespace": true,
+
+    "no-namespace": false,
     "jsdoc-format": [true, "check-multiline-start"],
     "no-duplicate-imports": true,
     "await-promise": [true, "PromiseLike"],
     "array-type": [true, "array"],
 
-    // RxJS
+    
     "rxjs-no-unsafe-takeuntil": true,
     "rxjs-no-unsafe-catch": true,
 
-    // Custom Rules
+    
     "ts-loader": true,
     "no-exposed-todo": true,
     "no-private-getters": [true, "^_"],
@@ -73,9 +69,7 @@
     "lightweight-tokens": [
       true,
       ["**/*.spec.ts"],
-      // Directionality is always used in Angular Material and therefore does not
-      // need a lightweight token. Date Adapter is not very significant and does not
-      // need a dedicated token.
+  
       ["Directionality", "DateAdapter"]
     ],
     "no-coercion-members": true,
@@ -121,7 +115,7 @@
         }
       },
       [
-        // Internal code that doesn't need to follow the same standards.
+   
         "**/+(e2e-app|components-examples|universal-app|dev-app|integration)/**",
         "**/*.spec.ts"
       ]
@@ -129,7 +123,7 @@
     "require-license-banner": [
       true,
       [
-        // Internal files that don't need license banners.
+
         "**/+(e2e-app|components-examples|universal-app|dev-app|integration|tools|scripts)/**",
         "**/*.spec.ts"
       ]
@@ -137,7 +131,6 @@
     "no-cross-entry-point-relative-imports": [
       true,
       [
-        // Files that we don't publish to npm so the relative imports don't matter.
         "**/+(dev-app|components-examples|schematics|tools)/**",
         "**/google-maps/testing/**",
         "**/cdk/testing/+(tests|private)/**",
@@ -147,29 +140,28 @@
     "file-name-casing": [
       true,
       {
-        // Exclude custom lint rule files since they have to always be camel-cased and end
-        // with "Rule".
+
+      
         "\\w+Rule.ts": "camel-case",
         ".*": "kebab-case"
       }
     ],
     "no-unescaped-html-tag": true,
-    // Ensures that all rxjs imports come only from `rxjs` and `rxjs/operators`.
+ 
     "import-blacklist": [true, ["^rxjs(?!$|/operators$).*", "^@material/"]]
   },
   "linterOptions": {
     "exclude": [
-      // Exclude the API golden files
+
       "tools/public_api_guard/**/*.d.ts",
-      // Exclude schematic template files and test cases that can't be linted.
+ 
       "src/material/schematics/ng-generate/*/files/**/*",
       "src/cdk/schematics/ng-generate/*/files/**/*",
       "src/cdk/schematics/ng-update/test-cases/**/*_input.ts",
       "src/cdk/schematics/ng-update/test-cases/**/*_expected_output.ts",
       "src/material/schematics/ng-update/test-cases/**/*_input.ts",
       "src/material/schematics/ng-update/test-cases/**/*_expected_output.ts",
-      // These CLI-generated projects are not necessarily compliant with the lint
-      // rules and they should remain as unmodified as possible.
+  
       "integration/ng-add/**/*",
       "integration/ng-add-standalone/**/*",
       "integration/ng-update-v13/**/*"

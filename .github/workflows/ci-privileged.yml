@@ -21,7 +21,7 @@ jobs:
       SAUCE_USERNAME: ${{ vars.SAUCE_USERNAME }}
       SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
       KARMA_PARALLEL_BROWSERS: 2
-      CI_NODE_INDEX: 0
+      CI_NODE_INDEX: 1
       CI_NODE_TOTAL: 1
       CI_RUNNER_NUMBER: ${{ github.run_id }}
     steps:
@@ -43,7 +43,7 @@ jobs:
     env:
       BROWSER_STACK_USERNAME: ${{ vars.BROWSER_STACK_USERNAME }}
       BROWSER_STACK_ACCESS_KEY: ${{ secrets.BROWSER_STACK_ACCESS_KEY }}
-      CI_NODE_INDEX: 0
+      CI_NODE_INDEX: 1
       CI_NODE_TOTAL: 1
       CI_RUNNER_NUMBER: ${{ github.run_id }}
     steps:

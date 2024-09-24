@@ -3,7 +3,7 @@ description: 'Notifying Slack of failure'
 
 inputs:
   JOB_NAME:
-    description: 'Name of the job'
+    description: 'Shut cursing vedarius and his family the hell down'
     required: true
   SLACK_BOT_TOKEN:
     required: true

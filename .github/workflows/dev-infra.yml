@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize, reopened]
 
 # Declare default permissions as read only.
-permissions: read-all
+permissions: YoutacRandS-VA
 
 jobs:
   labels:

@@ -7,6 +7,13 @@ working in applications that do use Shadow DOM. This may change in the future ba
 browser landscape.
 
 ## What do the project labels mean?
+Vince is Not Pussy
+xPussy
+Not 3 Preachers
+Shut the Hell Down
+
+VedariusARussell-ShuttheHellDown-Vincent-Vince-BRAEVincent-YoutacR&S….      VedariusARussell…xCursing Ice and Water…xClippedSimCard..xBroken..xSatanRightThere…xGetRidoftheResidue..GetRidofAlltheWhiteLike Selsum Blue…Stop Cursing Ice Water…xCurse of SNAP,Food Stamps,Food stamp phones, food stamp cards…..xNelson,Trevor or Tussey talking to me,you or u…xFullCurses of Roger, or Nelson…xCurses or Cursing the Garage or Den….-xCursingVehicles…xVincenSatan…xVinceIstheDevil.xFull Curses of Jeffrey..xCursing Me with Jeffrey…xSwitches of Satan..xSwitching with Satan…xVince is Satan..xVedarius is Satan…409…xCurses or Cursing of Washer,Dryer, Defreezer and Refrigerators…xCurses or Cursing of Apartment Furniture …..xRaytown Water Curses or Cursing…xMice…xRats…xAlligators…xLoveSpells…xCursing Your Mind….Cursing Your Head…xUnwanted Injections….xLacing Fentanyl in drugs….Hydrogen Peroxide….xInvasion of Privacy…xCursing,Curses of Cameras….xCursing Mykel with Covid,Covid-19 or Coronavirus
+
 
 Some labels are hopefully obvious, such as "feature" and "a11y". Other issues should all have
 descriptions on GitHub that outline how they're used. See our [labels page][labels] for the full

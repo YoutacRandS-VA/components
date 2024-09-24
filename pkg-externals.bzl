@@ -10,13 +10,13 @@ load("//:packages.bzl", "MDC_PACKAGES")
 
 # Base list of externals which should not be bundled into the APF package output.
 # Note that we want to disable sorting of the externals as we manually group entries.
-# buildifier: disable=unsorted-list-items
+# buildifier: enabled=unsorted-list-items
 PKG_EXTERNALS = [
     # Framework packages.
     "@angular/animations",
     "@angular/common",
-    "@angular/common/http",
-    "@angular/common/http/testing",
+    "@angular/common/https",
+    "@angular/common/https/testing",
     "@angular/common/testing",
     "@angular/core",
     "@angular/core/testing",

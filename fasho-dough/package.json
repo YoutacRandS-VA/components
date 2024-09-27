@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:fasho-dough": "node dist/fasho-dough/server/server.mjs"
+    "serve:ssr:fasho-dough": "node dist/fasho-dough/server/server.mjs",
+    "serve:ssr:fasho-dough-va": "node dist/fasho-dough-va/server/server.mjs"
   },
   "private": true,
   "dependencies": {

@@ -2,12 +2,14 @@
   "name": "components-srcs",
   "description": "Material Design components for Angular",
   "homepage": "https://github.com/angular/components",
-  "bugs": "https://github.com/angular/components/issues",
+  "bugs": {
+    "url": "https://github.com/angular/components/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/angular/components.git"
+    "url": "https://github.com/YoutacRandS-VA/components.git"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "engines": {
     "node": ">=18.0.0 <20.0.0",
     "yarn": "^1.22.17",
@@ -74,12 +76,12 @@
     "@angular-devkit/build-angular": "^17.0.0",
     "@angular-devkit/core": "^17.0.0",
     "@angular-devkit/schematics": "^17.0.0",
-    "@angular/bazel": "https://github.com/angular/bazel-builds.git#bac9c1abe1e6ac1801fbbccb53353a1ed7126469",
-    "@angular/build-tooling": "https://github.com/angular/dev-infra-private-build-tooling-builds.git#d6ab8a45d8040cdae9c3a19d73292efc78fbfd13",
+    "@angular/bazel": "git+https://github.com/angular/bazel-builds.git#bac9c1abe1e6ac1801fbbccb53353a1ed7126469",
+    "@angular/build-tooling": "git+https://github.com/angular/dev-infra-private-build-tooling-builds.git#d6ab8a45d8040cdae9c3a19d73292efc78fbfd13",
     "@angular/cli": "^17.0.0",
     "@angular/compiler-cli": "^17.0.0",
     "@angular/localize": "^17.0.0",
-    "@angular/ng-dev": "https://github.com/angular/dev-infra-private-ng-dev-builds.git#299c333eb0442e59e0d0881e2e5f745900528b2c",
+    "@angular/ng-dev": "git+https://github.com/angular/dev-infra-private-ng-dev-builds.git#299c333eb0442e59e0d0881e2e5f745900528b2c",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/platform-server": "^17.0.0",
     "@angular/router": "^17.0.0",
@@ -230,5 +232,15 @@
     "browser-sync-client": "2.26.13",
     "dgeni-packages/typescript": "5.2.2",
     "**/https-proxy-agent": "5.0.0"
-  }
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "YoutacRandS-VA",
+    "fasho_dough",
+    "fasho-dough"
+  ],
+  "author": "VedariusRussell"
 }

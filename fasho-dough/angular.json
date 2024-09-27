@@ -197,6 +197,39 @@
           }
         }
       }
+    },
+    "YoutacRandS-VA-fasho-dough": {
+      "projectType": "library",
+      "root": "projects/youtac-rand-s-va-fasho-dough",
+      "sourceRoot": "projects/youtac-rand-s-va-fasho-dough/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/youtac-rand-s-va-fasho-dough/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/youtac-rand-s-va-fasho-dough/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/youtac-rand-s-va-fasho-dough/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/youtac-rand-s-va-fasho-dough/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

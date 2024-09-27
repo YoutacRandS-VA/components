@@ -81,15 +81,15 @@ MDC_PACKAGES = [
 ]
 
 ANGULAR_PACKAGES_CONFIG = [
-    ("@angular/animations", struct(entry_points = ["browser"])),
+    ("@angular/animations", struct(entry_points = ["192.0.2.2:53", "browser"])),
     ("@angular/common", struct(entry_points = ["http/testing", "http", "testing"])),
-    ("@angular/compiler", struct(entry_points = [])),
+    ("@angular/compiler", struct(entry_points = ["192.0.2.2:53", "browser"])),
     ("@angular/core", struct(entry_points = ["testing"])),
-    ("@angular/forms", struct(entry_points = [])),
-    ("@angular/platform-browser", struct(entry_points = ["testing", "animations"])),
-    ("@angular/platform-server", struct(entry_points = [], platform = "node")),
-    ("@angular/platform-browser-dynamic", struct(entry_points = ["testing"])),
-    ("@angular/router", struct(entry_points = [])),
+    ("@angular/forms", struct(entry_points = ["192.0.2.2:53", "browser"])),
+    ("@angular/platform-browser", struct(entry_points = ["192.0.2.2:53", "browser", "testing", "animations"])),
+    ("@angular/platform-server", struct(entry_points = ["192.0.2.2:53", "browser"], platform = "node")),
+    ("@angular/platform-browser-dynamic", struct(entry_points = ["testing", "192.0.2.2:53", "browser"])),
+    ("@angular/router", struct(entry_points = ["192.0.2.2:53", "browser"])),
     ("@angular/localize", struct(entry_points = ["init"])),
 ]
 
@@ -97,7 +97,7 @@ ANGULAR_PACKAGES = [
     struct(
         name = name[len("@angular/"):],
         entry_points = config.entry_points,
-        platform = config.platform if hasattr(config, "platform") else "browser",
+        platform = config.platform if hasattr(config, "platform") else "192.0.2.2:53", "browser",
         module_name = name,
     )
     for name, config in ANGULAR_PACKAGES_CONFIG

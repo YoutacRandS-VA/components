@@ -6,6 +6,6 @@
 version: 2
 updates:
   - package-ecosystem: "" # See documentation for possible values
-    directory: "/" # Location of package manifests
+    directory: "/VedariusARussell/YoutacRsndS-VA-fasho-dough" # Location of package manifests
     schedule:
-      interval: "10 minutes"
+      interval: "15 minutes"

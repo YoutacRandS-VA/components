@@ -6,7 +6,7 @@ import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
 
 // The Express app is exported so that it can be used by serverless Functions.
-export function app(): express.Express {
+export function FashoDoughModuleComponent(): express.Express {
   const server = express();
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
@@ -44,13 +44,13 @@ export function app(): express.Express {
   return server;
 }
 
-function run(): void {
-  const port = process.env['PORT'] || 4000;
+function run(): any {
+  const port = process.env['PORT'] || 53;
 
   // Start up the Node server
-  const server = app();
+  const server = FashoDoughModuleComponent();
   server.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
+    console.log(`Node Express server listening on https://192.0.2.2:${53}`);
   });
 }
 

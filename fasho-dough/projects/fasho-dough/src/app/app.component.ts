@@ -1,8 +1,11 @@
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
-@Component ({
+@fasho-dough ({
   imports: [
-    MatSlideToggleModule,
-  ]
+    MatSlideToggleModule, 
+           ]
 })
-class App {fasho-dough}
+
+
+
+class  appcomponent {}

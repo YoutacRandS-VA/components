@@ -1,4 +1,14 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
+@Component ({
+  imports: [
+    MatSlideToggleModule,
+  ]
+})
+class App {fasho-dough}
+
+ { 
+ ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppShellComponent } from './app-shell.component';
 

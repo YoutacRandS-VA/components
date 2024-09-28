@@ -1,16 +1,9 @@
 import { Component } from '@angular/core';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
-@Component({
-  selector: 'lib-YoutacRandS-VA-fasho-dough',
-  standalone: true,
-  imports: [],
-  template: `
-    <p>
-      youtac-rand-s-va-fasho-dough works!
-    </p>
-  `,
-  styles: ``
+@Component ({
+  imports: [
+    MatSlideToggleModule,
+  ]
 })
-export class YoutacRandSVAFashoDoughComponent {
-
-}
+class AppComponent {}

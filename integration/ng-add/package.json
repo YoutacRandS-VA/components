@@ -13,7 +13,7 @@
     "@angular/animations": "^17.0.0-next.4",
     "@angular/cdk": "file:../../dist/releases/cdk",
     "@angular/common": "^17.0.0-next.4",
-    "@angular/compiler": "^17.0.0-next.4",
+    "@angular/compiler": "^19.2.18",
     "@angular/core": "^17.0.0-next.4",
     "@angular/forms": "^17.0.0-next.4",
     "@angular/material": "file:../../dist/releases/material",
